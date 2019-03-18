@@ -10,6 +10,7 @@ if ($type=="student"){
 	$res=mysqli_query($db,$q1);
 	if(mysqli_num_rows($res)==1){
 		$row=mysqli_fetch_array($res);
+		$_SESSION['sname']=$row['name'];
 		$_SESSION['dept']=$row['department'];
 			echo '<script>alert("your login is succesful");location.href="test.php"</script>';
 
@@ -27,7 +28,8 @@ $q1="select * from faculty where userid='$name' and password='$pass'";
 	$res=mysqli_query($db,$q1);
 	if(mysqli_num_rows($res)==1){
 				$row=mysqli_fetch_array($res);
-				echo $row['department'];
+			$_SESSION['fname']=$row['name'];
+
 				$_SESSION['dept']=$row['department'];
 
 			echo '<script>alert("your login is succesful");location.href="facultyfeed.php"</script>';

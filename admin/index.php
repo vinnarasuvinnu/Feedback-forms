@@ -82,6 +82,7 @@ table.clear().draw();
     '<td>'+value.course+'</td>' +
     '<td>'+value.shift+'</td>' +
     
+    '<td>'+value.mark+'</td>' +
 
 
 
@@ -131,7 +132,8 @@ table1.clear().draw();
     '<td>'+value.mobile+'</td>' +
   '<td>'+value.mail+'</td>' +
     '<td>'+value.userid+'</td>' +
-    
+        '<td>'+value.mark+'</td>' +
+
 
 
 
@@ -227,6 +229,7 @@ table1.clear().draw();
                 <th>Mail</th>
                 <th>Course</th>
                 <th>Shift</th>
+                <th>Marks</th>
 								
 							</tr>
 						</thead>
@@ -314,6 +317,7 @@ table1.clear().draw();
                   <th>Mobile</th>
                 <th>Mail</th>
                 <th>User id</th>
+                <th>Marks</th>
                 
               </tr>
             </thead>

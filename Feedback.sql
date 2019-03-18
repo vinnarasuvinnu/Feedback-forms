@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2019 at 04:55 PM
+-- Generation Time: Mar 18, 2019 at 09:13 PM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.2.15-0ubuntu0.18.04.1
 
@@ -37,7 +37,7 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`id`, `dept`, `total`) VALUES
-(1, 'Computer Science', '2260');
+(2, 'Computer Science', '60');
 
 -- --------------------------------------------------------
 
@@ -54,21 +54,20 @@ CREATE TABLE `faculty` (
   `mobile` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `userid` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `marks` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `faculty`
 --
 
-INSERT INTO `faculty` (`id`, `name`, `department`, `joining_date`, `designation`, `mobile`, `mail`, `userid`, `password`) VALUES
-(1, '', '', '2019-01-02', '', '', '', '', ''),
-(2, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', ''),
-(3, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', ''),
-(4, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', ''),
-(5, '', '', '2019-01-10', '', '', '', '', ''),
-(6, 'me', 'Computer Science', '2019-02-10', 'sdfa', '9159414383', 'vinnu@gmail.com', '23', '22'),
-(7, '3', 'Computer Science', '0003-03-23', '3', '3', '3@gmail.com', '1234', '1234');
+INSERT INTO `faculty` (`id`, `name`, `department`, `joining_date`, `designation`, `mobile`, `mail`, `userid`, `password`, `marks`) VALUES
+(2, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', '', 0),
+(3, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', '', 0),
+(4, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', '', 0),
+(6, 'me', 'Computer Science', '2019-02-10', 'sdfa', '9159414383', 'vinnu@gmail.com', '23', '22', 0),
+(7, '3', 'Computer Science', '0003-03-23', '3', '3', '3@gmail.com', '1234', '1234', 100);
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,7 @@ CREATE TABLE `fdepartment` (
 --
 
 INSERT INTO `fdepartment` (`id`, `dept`, `total`) VALUES
-(1, 'Computer Science', '720');
+(2, 'Computer Science', '100');
 
 -- --------------------------------------------------------
 
@@ -123,16 +122,17 @@ CREATE TABLE `student` (
   `mail` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
   `shift` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `marks` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `name`, `rollno`, `batch`, `department`, `mobile`, `mail`, `course`, `shift`, `password`) VALUES
-(9, '1', '1', '1', 'Computer Science', '11', '1@gmail.com', '1', 'Morning Shift', '1'),
-(10, '2', '2', '2', 'Computer Science', '2', '2@gmail.com', '2', 'Morning Shift', '2');
+INSERT INTO `student` (`id`, `name`, `rollno`, `batch`, `department`, `mobile`, `mail`, `course`, `shift`, `password`, `marks`) VALUES
+(9, '1', '1', '1', 'Computer Science', '11', '1@gmail.com', '1', 'Morning Shift', '1', 60),
+(10, '2', '2', '2', 'Computer Science', '2', '2@gmail.com', '2', 'Morning Shift', '2', 0);
 
 --
 -- Indexes for dumped tables
@@ -170,7 +170,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `faculty`
 --
@@ -180,7 +180,7 @@ ALTER TABLE `faculty`
 -- AUTO_INCREMENT for table `fdepartment`
 --
 ALTER TABLE `fdepartment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `student`
 --

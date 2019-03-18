@@ -1,6 +1,8 @@
 <?php
-$db=mysqli_connect('localhost','root','','Feedback');
+/*$db=mysqli_connect('localhost','vinu','','Feedback');
+*/
 session_start();
+include("../db.php");
 $u=$_POST['uname'];
 $p=$_POST['pass'];
 $q1="select * from register where name='$u' and password='$p'";

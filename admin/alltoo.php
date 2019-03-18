@@ -1,5 +1,8 @@
 <?php
-$db=mysqli_connect('localhost','root','','Feedback');
+/*$db=mysqli_connect('localhost','root','','Feedback');
+*/
+include("../db.php");
+
 $tot=0;
 $dept=$_POST['dept'];
 
@@ -10,7 +13,7 @@ if($res){
 
 while($row=mysqli_fetch_array($res)){
 
-	$output []=array('name'=>$row['name'],'rollno'=>$row['rollno'],'batch'=>$row['batch'],'department'=>$row['department'],'mobile'=>$row['mobile'],'mail'=>$row['mail'],'course'=>$row['course'],'shift'=>$row['shift']);
+	$output []=array('name'=>$row['name'],'rollno'=>$row['rollno'],'batch'=>$row['batch'],'department'=>$row['department'],'mobile'=>$row['mobile'],'mail'=>$row['mail'],'course'=>$row['course'],'shift'=>$row['shift'],'mark'=>$row['marks']);
 }
 
 
