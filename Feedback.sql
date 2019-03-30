@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2019 at 09:13 PM
+-- Generation Time: Mar 30, 2019 at 07:56 PM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.2.15-0ubuntu0.18.04.1
 
@@ -67,7 +67,8 @@ INSERT INTO `faculty` (`id`, `name`, `department`, `joining_date`, `designation`
 (3, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', '', 0),
 (4, 'java', 'Chemistry', '2019-01-05', 'sdfa', '9159414383', 'vinfdf@gmail.com', '2313', '', 0),
 (6, 'me', 'Computer Science', '2019-02-10', 'sdfa', '9159414383', 'vinnu@gmail.com', '23', '22', 0),
-(7, '3', 'Computer Science', '0003-03-23', '3', '3', '3@gmail.com', '1234', '1234', 100);
+(7, '3', 'Computer Science', '0003-03-23', '3', '3', '3@gmail.com', '1234', '1234', 100),
+(8, '', '', '2019-03-15', '', '', '', '', '', 32);
 
 -- --------------------------------------------------------
 
@@ -87,6 +88,43 @@ CREATE TABLE `fdepartment` (
 
 INSERT INTO `fdepartment` (`id`, `dept`, `total`) VALUES
 (2, 'Computer Science', '100');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL,
+  `to_whom` varchar(255) NOT NULL,
+  `primary_option` varchar(255) NOT NULL,
+  `profession` varchar(255) NOT NULL,
+  `commute` varchar(255) NOT NULL,
+  `usual` varchar(255) NOT NULL,
+  `dob` date NOT NULL,
+  `for_work` varchar(255) NOT NULL,
+  `top` varchar(255) NOT NULL,
+  `bottom` varchar(255) NOT NULL,
+  `pattern_top` varchar(255) NOT NULL,
+  `patter_bottom` varchar(255) NOT NULL,
+  `complexion` varchar(255) NOT NULL,
+  `body` varchar(255) NOT NULL,
+  `body_height` varchar(255) NOT NULL,
+  `body_weight` varchar(255) NOT NULL,
+  `fit_challenge` varchar(255) NOT NULL,
+  `t_shirt` varchar(255) NOT NULL,
+  `shirt` varchar(255) NOT NULL,
+  `shorts` varchar(255) NOT NULL,
+  `street_number` varchar(255) NOT NULL,
+  `route` varchar(255) NOT NULL,
+  `locality` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `postal_code` varchar(255) NOT NULL,
+  `curtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -157,6 +195,12 @@ ALTER TABLE `fdepartment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
@@ -175,12 +219,17 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `fdepartment`
 --
 ALTER TABLE `fdepartment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `student`
 --
